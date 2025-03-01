@@ -1017,3 +1017,23 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+.cv-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.cv-link:hover {
+    background: rgba(100, 255, 218, 0.1);
+    transform: translateY(-2px);
+}
+
+.cv-link i {
+    font-size: 0.9rem;
+    color: var(--accent);
+}
