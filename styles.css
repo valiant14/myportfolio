@@ -196,9 +196,38 @@ section {
 
 /* About Section */
 .about {
+    position: relative;
+    overflow: hidden;
     padding: 120px 2rem;
     background: var(--bg-primary);
     width: 100%;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(135deg, var(--bg-primary) 25%, transparent 25%) -50px 0,
+        linear-gradient(225deg, var(--bg-primary) 25%, transparent 25%) -50px 0,
+        linear-gradient(315deg, var(--bg-primary) 25%, transparent 25%),
+        linear-gradient(45deg, var(--bg-primary) 25%, transparent 25%);
+    background-size: 100px 100px;
+    background-color: rgba(100, 255, 218, 0.02);
+    animation: backgroundShift 15s linear infinite;
+    z-index: -1;
+}
+
+@keyframes backgroundShift {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100px 100px;
+    }
 }
 
 .about h2 {
@@ -227,6 +256,8 @@ section {
     display: grid;
     grid-template-columns: 380px 1fr;
     gap: 5rem;
+    position: relative;
+    z-index: 1;
 }
 
 .about-left {
@@ -253,6 +284,29 @@ section {
     overflow: hidden;
     margin-bottom: 2rem;
     position: relative;
+}
+
+.profile-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 40%, var(--accent) 100%);
+    opacity: 0.2;
+    animation: profileGlow 3s ease-in-out infinite;
+}
+
+@keyframes profileGlow {
+    0%, 100% {
+        opacity: 0.2;
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        opacity: 0.3;
+        transform: scale(1.02) rotate(3deg);
+    }
 }
 
 .profile-image img {
@@ -297,10 +351,44 @@ section {
     background: var(--bg-primary);
     border-radius: 12px;
     margin-top: 2rem;
+    position: relative;
+    background: rgba(10, 25, 47, 0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
 .stat {
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, var(--accent), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.stat:hover::before {
+    opacity: 0.1;
+    animation: statShine 1.5s ease-in-out infinite;
+}
+
+@keyframes statShine {
+    0% {
+        transform: translateX(-100%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(100%) rotate(45deg);
+    }
 }
 
 .stat-number {
@@ -309,6 +397,25 @@ section {
     font-weight: 600;
     margin-bottom: 0.5rem;
     display: block;
+    position: relative;
+}
+
+.stat-number::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.stat:hover .stat-number::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 .stat-label {
@@ -323,6 +430,19 @@ section {
 
 .about-text {
     margin-bottom: 4rem;
+    position: relative;
+    padding: 2rem;
+    background: rgba(10, 25, 47, 0.3);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    transition: all 0.3s ease;
+}
+
+.about-text:hover {
+    border-color: rgba(100, 255, 218, 0.2);
+    box-shadow: 0 8px 30px rgba(100, 255, 218, 0.1);
 }
 
 .bio-intro {
@@ -330,6 +450,12 @@ section {
     font-size: 1.4rem;
     margin-bottom: 1.5rem;
     font-weight: 500;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.bio-intro:hover {
+    transform: translateX(10px);
 }
 
 .bio-detail, .bio-focus {
@@ -338,6 +464,12 @@ section {
     line-height: 1.8;
     margin-bottom: 1.5rem;
     opacity: 0.9;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.bio-detail:hover, .bio-focus:hover {
+    transform: translateX(10px);
 }
 
 .bio-focus {
@@ -345,6 +477,97 @@ section {
     padding: 1.5rem;
     border-radius: 12px;
     border-left: 3px solid var(--accent);
+}
+
+.skill-category {
+    position: relative;
+    overflow: hidden;
+    background: rgba(10, 25, 47, 0.7);
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -15px rgba(100, 255, 218, 0.3);
+}
+
+.skill-category::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, var(--accent) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.skill-category:hover::after {
+    opacity: 0.1;
+    animation: skillGlow 2s ease-in-out infinite;
+}
+
+@keyframes skillGlow {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.15;
+    }
+}
+
+.skills-container {
+    position: relative;
+    z-index: 1;
+}
+
+.skill-category li {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.skill-category li:hover {
+    transform: translateX(8px);
+    background: rgba(100, 255, 218, 0.1);
+}
+
+.skill-category li::before {
+    content: '';
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(100, 255, 218, 0.2),
+        transparent
+    );
+    transition: left 0.5s ease;
+}
+
+.skill-category li:hover::before {
+    left: 100%;
+    transition: left 0.5s ease;
+}
+
+.skill-category i {
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.skill-category li:hover i {
+    transform: scale(1.2);
+    color: var(--accent);
 }
 
 /* Responsive adjustments */
@@ -859,6 +1082,8 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
+    position: relative;
+    z-index: 1;
 }
 
 .skill-category {
@@ -867,11 +1092,45 @@ footer {
     border-radius: 15px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 20px -5px rgba(2, 12, 27, 0.3);
+    position: relative;
+    overflow: hidden;
 }
 
 .skill-category:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+}
+
+.skill-category::after {
+    content: '';
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(100, 255, 218, 0.2),
+        transparent
+    );
+    transition: left 0.5s ease;
+}
+
+.skill-category:hover::after {
+    left: 100%;
+    transition: left 0.5s ease;
+}
+
+.skill-category i {
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.skill-category:hover i {
+    transform: scale(1.2);
+    color: var(--accent);
 }
 
 .skill-category h4 {
@@ -912,6 +1171,8 @@ footer {
     border-radius: 8px;
     background: var(--bg-secondary);
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .skill-category li:hover {
@@ -919,11 +1180,36 @@ footer {
     background: rgba(100, 255, 218, 0.1);
 }
 
+.skill-category li::before {
+    content: '';
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(100, 255, 218, 0.2),
+        transparent
+    );
+    transition: left 0.5s ease;
+}
+
+.skill-category li:hover::before {
+    left: 100%;
+    transition: left 0.5s ease;
+}
+
 .skill-category i {
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.skill-category li:hover i {
+    transform: scale(1.2);
     color: var(--accent);
-    font-size: 1.2rem;
-    width: 24px;
-    text-align: center;
 }
 
 .skill-category span {
