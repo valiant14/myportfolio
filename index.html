@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <div class="scroll-progress"></div>
+    <nav>
+        <div class="nav-content">
+            <div class="logo">
+                <a href="#home">Portfolio</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-particles" id="particles-js"></div>
+        <div class="hero-content">
+            <h1 class="animate__animated animate__fadeInDown">Welcome to My Portfolio</h1>
+            <p class="animate__animated animate__fadeInUp animate__delay-1s">Software Developer & Creative Thinker</p>
+            <a href="#projects" class="cta-button animate__animated animate__pulse animate__infinite">View My Work</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <div class="about-left">
+                <div class="profile-image">
+                    <img src="https://via.placeholder.com/350x350" alt="Profile Picture">
+                    <div class="profile-overlay"></div>
+                </div>
+                <div class="profile-info">
+                    <h3>John Doe</h3>
+                    <p class="title">Full Stack Developer</p>
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Years<br>Experience</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Completed<br>Projects</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">20+</span>
+                            <span class="stat-label">Happy<br>Clients</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-right">
+                <div class="about-text">
+                    <p class="bio-intro">👋 Hello! I'm a passionate Full Stack Developer based in [Your Location].</p>
+                    <p class="bio-detail">With over 5 years of experience in web development, I specialize in building scalable applications and creating exceptional digital experiences. My approach combines technical expertise with creative problem-solving to deliver solutions that make a real impact.</p>
+                    <p class="bio-focus">Currently focusing on cloud-native applications and modern web technologies while exploring the possibilities of AI integration in web development.</p>
+                </div>
+
+                <section class="skills-section">
+                    <h3>Technical Expertise</h3>
+                    <div class="skills-container">
+                        <div class="skill-category">
+                            <h4>Frontend Development</h4>
+                            <ul>
+                                <li><i class="fab fa-html5"></i><span>HTML5</span></li>
+                                <li><i class="fab fa-css3-alt"></i><span>CSS3</span></li>
+                                <li><i class="fab fa-js"></i><span>JavaScript</span></li>
+                                <li><i class="fab fa-react"></i><span>React.js</span></li>
+                                <li><i class="fab fa-vuejs"></i><span>Vue.js</span></li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Backend Development</h4>
+                            <ul>
+                                <li><i class="fab fa-python"></i><span>Python</span></li>
+                                <li><i class="fab fa-node-js"></i><span>Node.js</span></li>
+                                <li><i class="fas fa-database"></i><span>SQL</span></li>
+                                <li><i class="fas fa-server"></i><span>RESTful APIs</span></li>
+                                <li><i class="fab fa-aws"></i><span>AWS</span></li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Tools & Technologies</h4>
+                            <ul>
+                                <li><i class="fab fa-git-alt"></i><span>Git</span></li>
+                                <li><i class="fab fa-docker"></i><span>Docker</span></li>
+                                <li><i class="fas fa-terminal"></i><span>Command Line</span></li>
+                                <li><i class="fas fa-code-branch"></i><span>CI/CD</span></li>
+                                <li><i class="fas fa-shield-alt"></i><span>Security</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="certifications">
+                    <h3>Certifications</h3>
+                    <div class="cert-list">
+                        <div class="cert-item">
+                            <i class="fas fa-certificate"></i>
+                            <span>AWS Certified Solutions Architect</span>
+                        </div>
+                        <div class="cert-item">
+                            <i class="fas fa-certificate"></i>
+                            <span>Microsoft Certified: Azure Developer Associate</span>
+                        </div>
+                        <div class="cert-item">
+                            <i class="fas fa-certificate"></i>
+                            <span>Google Cloud Professional Developer</span>
+                        </div>
+                        <div class="cert-item">
+                            <i class="fas fa-certificate"></i>
+                            <span>Certified Kubernetes Administrator (CKA)</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/600x400" alt="E-Commerce Platform">
+                    <div class="project-overlay">
+                        <div class="project-tech">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                            <span>Stripe</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>E-Commerce Platform</h3>
+                    <p>A full-stack e-commerce solution with real-time inventory management, secure payment processing, and an intuitive admin dashboard.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/600x400" alt="Task Management App">
+                    <div class="project-overlay">
+                        <div class="project-tech">
+                            <span>Vue.js</span>
+                            <span>Express</span>
+                            <span>PostgreSQL</span>
+                            <span>WebSocket</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>Task Management App</h3>
+                    <p>A collaborative task management application featuring real-time updates, team collaboration tools, and detailed analytics dashboard.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/600x400" alt="AI Content Generator">
+                    <div class="project-overlay">
+                        <div class="project-tech">
+                            <span>Python</span>
+                            <span>TensorFlow</span>
+                            <span>Flask</span>
+                            <span>GPT-3</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>AI Content Generator</h3>
+                    <p>An AI-powered content generation platform that creates SEO-optimized articles using advanced natural language processing.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/600x400" alt="Cloud Infrastructure Dashboard">
+                    <div class="project-overlay">
+                        <div class="project-tech">
+                            <span>Angular</span>
+                            <span>AWS</span>
+                            <span>Terraform</span>
+                            <span>Docker</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>Cloud Infrastructure Dashboard</h3>
+                    <p>A comprehensive cloud infrastructure management dashboard with real-time monitoring, cost optimization, and automated deployment features.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/600x400" alt="Social Media Analytics">
+                    <div class="project-overlay">
+                        <div class="project-tech">
+                            <span>Next.js</span>
+                            <span>GraphQL</span>
+                            <span>Redis</span>
+                            <span>D3.js</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>Social Media Analytics</h3>
+                    <p>A real-time social media analytics platform with sentiment analysis, trend prediction, and interactive data visualizations.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://via.placeholder.com/600x400" alt="Blockchain Explorer">
+                    <div class="project-overlay">
+                        <div class="project-tech">
+                            <span>Solidity</span>
+                            <span>Web3.js</span>
+                            <span>React</span>
+                            <span>Node.js</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>Blockchain Explorer</h3>
+                    <p>A feature-rich blockchain explorer with real-time transaction tracking, smart contract analysis, and wallet management capabilities.</p>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                        <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="contact-content">
+            <h2>Let's Connect</h2>
+            <p class="contact-description">I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, feel free to reach out!</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-text">
+                            <h3>Location</h3>
+                            <p>San Francisco, CA</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-text">
+                            <h3>Email</h3>
+                            <p><a href="mailto:your.email@example.com">your.email@example.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div class="contact-text">
+                            <h3>Phone</h3>
+                            <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+
+            <div class="social-links">
+                <a href="#" target="_blank" class="social-link" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="#" target="_blank" class="social-link" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="#" target="_blank" class="social-link" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                    <span>Twitter</span>
+                </a>
+                <a href="#" target="_blank" class="social-link" aria-label="Dev.to">
+                    <i class="fab fa-dev"></i>
+                    <span>Dev.to</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
