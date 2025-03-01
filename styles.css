@@ -856,15 +856,17 @@ footer {
 
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
+    margin-top: 2rem;
 }
 
 .skill-category {
     background: var(--bg-primary);
-    padding: 2rem;
-    border-radius: 12px;
+    padding: 1.8rem;
+    border-radius: 15px;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 20px -5px rgba(2, 12, 27, 0.3);
 }
 
 .skill-category:hover {
@@ -877,7 +879,20 @@ footer {
     font-size: 1.2rem;
     margin-bottom: 1.5rem;
     text-align: center;
-    opacity: 0.9;
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+
+.skill-category h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+    opacity: 0.5;
 }
 
 .skill-category ul {
@@ -886,7 +901,7 @@ footer {
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.8rem;
 }
 
 .skill-category li {
@@ -913,7 +928,7 @@ footer {
 
 .skill-category span {
     color: var(--text-secondary);
-    font-size: 1rem;
+    font-size: 0.95rem;
 }
 
 /* Certifications Section */
@@ -922,6 +937,7 @@ footer {
     padding: 2rem;
     background: var(--bg-secondary);
     border-radius: 16px;
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
 }
 
 .certifications h3 {
@@ -947,12 +963,13 @@ footer {
 .cert-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    gap: 1.2rem;
+    margin-top: 2rem;
 }
 
 .cert-item {
     background: var(--bg-primary);
-    padding: 1.5rem;
+    padding: 1.2rem;
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -961,24 +978,24 @@ footer {
 }
 
 .cert-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    transform: translateX(8px);
+    background: rgba(100, 255, 218, 0.1);
 }
 
 .cert-item i {
     color: var(--accent);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     opacity: 0.9;
 }
 
 .cert-item span {
     color: var(--text-secondary);
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1.4;
 }
 
 /* Responsive adjustments */
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
     .skills-container {
         grid-template-columns: repeat(2, 1fr);
     }
