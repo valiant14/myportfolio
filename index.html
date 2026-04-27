@@ -1,369 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-</head>
-<body>
-    <div class="scroll-progress"></div>
-    <nav>
-        <div class="nav-content">
-            <div class="logo">
-                <a href="#home">Portfolio</a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="./mycv.docx" download class="cv-link"><i class="fas fa-download"></i> Download CV</a></li>
-            </ul>
-        </div>
-    </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="System Administrator and IT Infrastructure professional portfolio and CV"
+    />
+    <title>System Admin | CV + Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      document.documentElement.classList.add('js-enabled');
+    </script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-shape bg-shape-1" aria-hidden="true"></div>
+    <div class="bg-shape bg-shape-2" aria-hidden="true"></div>
 
-    <section id="home" class="hero">
-        <div class="hero-particles" id="particles-js"></div>
-        <div class="hero-content">
-            <h1 class="animate__animated animate__fadeInDown">Welcome to My Portfolio</h1>
-            <p class="animate__animated animate__fadeInUp animate__delay-1s">Software Developer & Creative Thinker</p>
-            <a href="#projects" class="cta-button animate__animated animate__pulse animate__infinite">View My Work</a>
+    <header class="site-header">
+      <div class="brand">
+        <span class="brand-main">VALIANT FRANCISCO OCAMPO</span>
+        <div class="brand-contact">
+          <span class="brand-sub">valiant.ocampo14@gmail.com | +966 532 632 196</span>
         </div>
-    </section>
+      </div>
 
-    <section id="about" class="about">
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero section reveal">
+        <p class="eyebrow">System Administrator + IT Infrastructure</p>
+        <h1>
+          Building reliable systems,
+          <span class="accent">secure networks</span>,
+          and modern web solutions.
+        </h1>
+        <p class="hero-text">
+          IT Support and System Administrator with 15+ years of experience across enterprise
+          operations in Riyadh, KSA. Experienced in Microsoft 365, Azure AD, Active Directory,
+          Fortinet/Cisco networking, CCTV and access control and part-time
+          web/application development using React.js and Express.js.
+        </p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary">Hire Me</a>
+          <a href="#projects" class="btn btn-outline">View Portfolio</a>
+          <a href="Valiant-Francisco-Ocampo-CV.docx" class="btn btn-outline" download>Download CV (Word)</a>
+        </div>
+        <ul class="quick-facts">
+          <li><strong>Role</strong>System Admin / IT Support</li>
+          <li><strong>Experience</strong>2013 - Present</li>
+          <li><strong>Stack</strong>React.js, Express.js</li>
+        </ul>
+      </section>
+
+      <section id="about" class="section card reveal">
         <h2>About Me</h2>
-        <div class="about-content">
-            <div class="about-left">
-                <div class="profile-image">
-                    <img src="./val.jpeg" alt="Profile Picture">
-                    <div class="profile-overlay"></div>
-                </div>
-                <div class="profile-info">
-                    <h3>Valiant F. Ocampo</h3>
-                    <p class="title">IT Support Specialist</p>
-                    <div class="profile-stats">
-                        <div class="stat">
-                            <span class="stat-number">12+</span>
-                            <span class="stat-label">Years<br>Experience</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">7+</span>
-                            <span class="stat-label">Completed<br>Projects</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">5+</span>
-                            <span class="stat-label">Happy<br>Clients</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="about-right">
-                <div class="about-text">
-                    <p class="bio-intro">👋 Hello! I'm a passionate IT Professional & Full Stack Developer based in Saudi Arabia.</p>
-                    <p class="bio-detail">With over 12 years of experience in IT infrastructure and web development, I specialize in building scalable applications and managing enterprise IT systems. As a focused and detail-oriented developer, I thrive in environments where actions speak louder than words, letting my work quality and results demonstrate my expertise.</p>
-                    <p class="bio-focus">Currently focusing on cloud-native applications, modern web technologies, and enterprise IT infrastructure while exploring the possibilities of AI integration in development. I believe in the power of quiet dedication and methodical problem-solving to deliver robust, efficient solutions.</p>
-                </div>
+        <p>
+          I am an IT Support and System Administration professional with a strong track record in
+          enterprise support, infrastructure operations, and service reliability. I specialize in
+          end-user support, system troubleshooting, identity and access administration, and
+          secure office IT environments.
+        </p>
+        <p>
+          My background includes Microsoft 365, Azure AD, Active Directory, Fortinet and Cisco network security, CCTV, access control systems, and IT
+          asset lifecycle management. I also work part-time as a web and application developer
+          building business systems with React.js and Express.js.
+        </p>
+      </section>
 
-                <section class="skills-section">
-                    <h3>Technical Expertise</h3>
-                    <div class="skills-container">
-                        <div class="skill-category">
-                            <h4>Frontend Development</h4>
-                            <ul>
-                                <li><i class="fab fa-html5"></i><span>HTML5</span></li>
-                                <li><i class="fab fa-css3-alt"></i><span>CSS3</span></li>
-                                <li><i class="fab fa-js"></i><span>JavaScript</span></li>
-                                <li><i class="fab fa-react"></i><span>React.js</span></li>
-                                <li><i class="fab fa-vuejs"></i><span>React Native</span></li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Backend Development</h4>
-                            <ul>
-                                <li><i class="fab fa-python"></i><span>Python</span></li>
-                                <li><i class="fab fa-node-js"></i><span>Node.js</span></li>
-                                <li><i class="fas fa-database"></i><span>SQL</span></li>
-                                <li><i class="fas fa-server"></i><span>RESTful APIs</span></li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Tools & Technologies</h4>
-                            <ul>
-                                <li><i class="fab fa-git-alt"></i><span>Git</span></li>
-                                <li><i class="fab fa-docker"></i><span>Docker</span></li>
-                                <li><i class="fas fa-terminal"></i><span>Command Line</span></li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h4>IT Infrastructure</h4>
-                            <ul>
-                                <li><i class="fab fa-windows"></i><span>Windows Server</span></li>
-                                <li><i class="fab fa-microsoft"></i><span>Azure Cloud</span></li>
-                                <li><i class="fas fa-network-wired"></i><span>Cisco Networking</span></li>
-                                <li><i class="fas fa-shield-alt"></i><span>Firewall Security</span></li>
-                                <li><i class="fas fa-video"></i><span>CCTV Systems</span></li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Enterprise Systems</h4>
-                            <ul>
-                                <li><i class="fas fa-phone"></i><span>Avaya Telephone</span></li>
-                                <li><i class="fas fa-headset"></i><span>End User Support</span></li>
-                                <li><i class="fas fa-server"></i><span>System Administration</span></li>
-                                <li><i class="fas fa-network-wired"></i><span>Network Management</span></li>
-                                <li><i class="fas fa-shield-alt"></i><span>Security Management</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
+      <section id="experience" class="section reveal">
+        <h2>Professional Experience</h2>
+        <article class="timeline-item card">
+          <div class="timeline-head">
+            <h3>IT Support & System Administrator</h3>
+            <span class="pill">2013 - Present</span>
+          </div>
+          <p class="timeline-meta">Sedergroup | Riyadh, Kingdom of Saudi Arabia</p>
+          <ul>
+            <li><strong>Server Side:</strong> Installed and configured Windows Server, managed Active Directory, DNS, DHCP, and Group Policy for secure and reliable core services.</li>
+            <li><strong>Server Side:</strong> Administered hybrid identity between on-prem AD and Microsoft Entra ID, including Entra Connect synchronization, user lifecycle, and access management.</li>
+            <li><strong>Server Side:</strong> Managed Microsoft 365 domain/email configuration with Cloudflare DNS records (MX, TXT, CNAME, A) for domain verification and stable mail flow.</li>
+            <li><strong>Network:</strong> Supported enterprise LAN/Wi-Fi operations, switch and router troubleshooting, VLAN segmentation, and inter-VLAN routing.</li>
+            <li><strong>Network:</strong> Configured and maintained site-to-site VPN tunnels for secure branch connectivity, monitoring, and performance stability.</li>
+            <li><strong>Firewalls:</strong> Managed Fortinet firewall policies, NAT rules, and security hardening with log review and incident-driven tuning.</li>
+            <li><strong>CCTV:</strong> Administered Hikvision CCTV and ZKTeco access control systems to maintain monitoring uptime and controlled facility access.</li>
+            <li><strong>Operations:</strong> Provided advanced L2 support, root-cause analysis, asset lifecycle management, and continuity-focused incident response.</li>
+          </ul>
+        </article>
+      </section>
 
-            </div>
+      <section id="skills" class="section reveal">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+          <article class="skill-card card">
+            <h3>System Administration</h3>
+            <ul>
+              <li>Windows Server Installation and Configuration</li>
+              <li>IT Operations & End-User Support</li>
+              <li>Onboarding/Offboarding and Account Provisioning</li>
+              <li>L1/L2 Incident Management and Root-Cause Troubleshooting</li>
+              <li>Hardware/Software Troubleshooting & Preventive Maintenance</li>
+            </ul>
+          </article>
+          <article class="skill-card card">
+            <h3>Identity, Cloud & Security</h3>
+            <ul>
+              <li>Microsoft Azure Administration</li>
+              <li>Active Directory Domain Services (AD DS)</li>
+              <li>DNS and DHCP Services Administration</li>
+              <li>Microsoft Entra Connect (Azure AD Connect)</li>
+              <li>Hybrid Identity and Access Management</li>
+              <li>AD Group Policy (GPO) Design and Enforcement</li>
+              <li>Microsoft 365, Entra ID, and SharePoint Administration</li>
+              <li>MFA, Conditional Access, and Identity Risk Review</li>
+            </ul>
+          </article>
+          <article class="skill-card card">
+            <h3>Network & Infrastructure</h3>
+            <ul>
+              <li>LAN/Wi-Fi, Routers, Switches, and Network Troubleshooting</li>
+              <li>Cisco VLAN Configuration and Segmentation</li>
+              <li>Cisco Routing Fundamentals and Inter-VLAN Routing</li>
+              <li>Advanced Networking (Subnetting and Trunking)</li>
+              <li>Firewall Management (Fortinet)</li>
+              <li>Site-to-Site VPN Configuration and Troubleshooting</li>
+              <li>DNS Management (Microsoft 365 and Cloudflare Records)</li>
+            </ul>
+          </article>
+          <article class="skill-card card">
+            <h3>Physical Security & Devices</h3>
+            <ul>
+              <li>CCTV Installation, Troubleshooting, and Uptime Management</li>
+              <li>Access Control Systems (ZKTeco)</li>
+              <li>IP Telephone Support</li>
+              <li>Printers, Copiers, Scanners, and Network Peripherals</li>
+            </ul>
+          </article>
+          <article class="skill-card card">
+            <h3>IT Service Delivery & Development</h3>
+            <ul>
+              <li>Ticketing Systems and Issue Documentation</li>
+              <li>IT Asset & Inventory Management</li>
+              <li>SLA-Based Support Delivery and Reporting</li>
+              <li>React.js Frontend Development</li>
+              <li>Express.js Backend APIs</li>
+              <li>Business Application Development & Maintenance</li>
+            </ul>
+          </article>
         </div>
-    </section>
+      </section>
 
-    <section id="projects" class="projects">
-        <h2>Featured Projects</h2>
+      <section id="projects" class="section reveal">
+        <h2>Project Success</h2>
         <div class="project-grid">
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="https://placehold.co/600x400/0a192f/64ffda/png?text=Facility+Management" alt="Facility Management System">
-                    <div class="project-overlay">
-                        <div class="project-tech">
-                            <span>React.js</span>
-                            <span>Express.js</span>
-                            <span>MySQL</span>
-                            <span>Node.js</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <h3>Facility Management System</h3>
-                    <p>A comprehensive facility management system with real-time monitoring, automated maintenance scheduling, and detailed analytics dashboard.</p>
-                    <div class="project-links">
-                        <a href="https://green.seder.sa/" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="https://placehold.co/600x400/0a192f/64ffda/png?text=Waste+Management" alt="Waste Management App">
-                    <div class="project-overlay">
-                        <div class="project-tech">
-                            <span>React.js</span>
-                            <span>React Native</span>
-                            <span>Express.js</span>
-                            <span>MySQL</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <h3>Waste Management App</h3>
-                    <p>A comprehensive waste management solution with mobile and web interfaces, featuring real-time tracking, collection scheduling, and analytics dashboard.</p>
-                    <div class="project-links">
-                        <a href="https://e-services.seder.sa/" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="https://placehold.co/600x400/0a192f/64ffda/png?text=Fleet+Inventory" alt="Fleet Inventory App">
-                    <div class="project-overlay">
-                        <div class="project-tech">
-                            <span>React Native</span>
-                            <span>Express.js</span>
-                            <span>MySQL</span>
-                            <span>Node.js</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <h3>Fleet Inventory App</h3>
-                    <p>A mobile-first fleet management solution for tracking vehicle inventory, maintenance schedules, and real-time fleet status monitoring.</p>
-                    <!-- <div class="project-links">
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
-                    </div> -->
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="https://placehold.co/600x400/0a192f/64ffda/png?text=IT+Asset+Management" alt="IT Asset Management System">
-                    <div class="project-overlay">
-                        <div class="project-tech">
-                            <span>React.js</span>
-                            <span>Express.js</span>
-                            <span>MySQL</span>
-                            <span>Node.js</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <h3>IT Asset Management System</h3>
-                    <p>A comprehensive IT asset tracking system featuring hardware inventory management, software license tracking, and automated maintenance alerts.</p>
-                    <div class="project-links">
-                        <a href="https://eservices.seder.sa/helpdesk/login" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="https://placehold.co/600x400/0a192f/64ffda/png?text=IT+Helpdesk" alt="IT Helpdesk Ticketing System">
-                    <div class="project-overlay">
-                        <div class="project-tech">
-                            <span>React.js</span>
-                            <span>Express.js</span>
-                            <span>MySQL</span>
-                            <span>Node.js</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <h3>IT Helpdesk Ticketing System</h3>
-                    <p>A robust ticketing system with ticket tracking, automated assignments, SLA monitoring, and detailed reporting for IT support teams.</p>
-                    <div class="project-links">
-                        <a href="https://eservices.seder.sa/helpdesk/login" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
-                    </div>
-                </div>
-            </div>
-
-
-
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="https://placehold.co/600x400/0a192f/64ffda/png?text=Document+Controller" alt="Document Controller Application">
-                    <div class="project-overlay">
-                        <div class="project-tech">
-                            <span>React.js</span>
-                            <span>Express.js</span>
-                            <span>MySQL</span>
-                            <span>Node.js</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <h3>Document Controller Application</h3>
-                    <p>A comprehensive document management system featuring version control, automated workflows, document tracking, and access control management.</p>
-                    <!-- <div class="project-links">
-                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
-                    </div> -->
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="https://placehold.co/600x400/0a192f/64ffda/png?text=Travel+Website" alt="Travel Website">
-                    <div class="project-overlay">
-                        <div class="project-tech">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>Node.js</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <h3>Travel Website</h3>
-                    <p>A modern travel booking platform featuring destination search, booking management, itinerary planning, and integrated payment processing.</p>
-                    <div class="project-links">
-                        <a href="https://sedertravel.sa/" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
-                    </div>
-                </div>
-            </div>
-
+          <article class="project-card card">
+            <h3>Inventory Management System</h3>
+            <p>
+              Built and maintained an inventory platform to track stock movement, improve
+              procurement visibility, and reduce item loss across departments.
+            </p>
+            <p class="tagline">React.js + Express.js</p>
+          </article>
+          <article class="project-card card">
+            <h3>Helpdesk Ticketing System</h3>
+            <p>
+              Implemented a ticket workflow system for incident reporting, SLA tracking, and
+              support team collaboration to improve response and resolution time.
+            </p>
+            <p class="tagline">React.js + Express.js</p>
+          </article>
+          <article class="project-card card">
+            <h3>Recruitment Application</h3>
+            <p>
+              Developed a recruitment platform for applicant submission, candidate screening, and
+              hiring pipeline monitoring.
+            </p>
+            <p class="tagline">React.js + Express.js</p>
+          </article>
+          <article class="project-card card">
+            <h3>Facility Management System</h3>
+            <p>
+              Delivered a facility operations app to manage maintenance requests, asset records,
+              and service scheduling for smoother day-to-day operations.
+            </p>
+            <p class="tagline">React.js + Express.js</p>
+          </article>
         </div>
-    </section>
+      </section>
 
-    <section id="contact" class="contact">
-        <div class="contact-content">
-            <h2>Let's Connect</h2>
-            <p class="contact-description">I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, feel free to reach out!</p>
-            
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div class="contact-text">
-                            <h3>Location</h3>
-                            <p>Riyadh, Saudi Arabia</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div class="contact-text">
-                            <h3>Email</h3>
-                            <p><a href="mailto:valiant.ocampo14@gmail.com">valiant.ocampo14@gmail.com</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <div class="contact-text">
-                            <h3>Mobile</h3>
-                            <p><a href="tel:+966532632196">+966 532632196</a></p>
-                        </div>
-                    </div>
-                </div>
-
-                <form class="contact-form" id="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">
-                        <span>Send Message</span>
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
-                </form>
-            </div>
-
-            <div class="social-links">
-                <a href="#" target="_blank" class="social-link" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                    <span>GitHub</span>
-                </a>
-                <a href="#" target="_blank" class="social-link" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                    <span>LinkedIn</span>
-                </a>
-                <a href="#" target="_blank" class="social-link" aria-label="Twitter">
-                    <i class="fab fa-twitter"></i>
-                    <span>Twitter</span>
-                </a>
-                <a href="#" target="_blank" class="social-link" aria-label="Dev.to">
-                    <i class="fab fa-dev"></i>
-                    <span>Dev.to</span>
-                </a>
-            </div>
+      <section id="contact" class="section card reveal">
+        <h2>Contact</h2>
+        <p>Available for System Admin, IT Infrastructure, and hybrid Dev projects.</p>
+        <div class="contact-list">
+          <a href="mailto:valiant.ocampo14@gmail.com">valiant.ocampo14@gmail.com</a>
+          <a href="https://www.linkedin.com/in/valiant-ocampo-260839199/" target="_blank" rel="noopener noreferrer"
+            >LinkedIn Profile</a
+          >
+          <a href="https://github.com/valiant14" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
-    </section>
+      </section>
+    </main>
 
-    <footer>
-        <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Valiant Ocampo Portfolio</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

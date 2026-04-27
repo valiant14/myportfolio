@@ -1,118 +1,79 @@
-// Particles.js configuration
-particlesJS('particles-js', {
-    particles: {
-        number: { value: 80, density: { enable: true, value_area: 800 } },
-        color: { value: '#ffffff' },
-        shape: { type: 'circle' },
-        opacity: {
-            value: 0.5,
-            random: false,
-            animation: { enable: true, speed: 1, minimumValue: 0.1, sync: false }
-        },
-        size: {
-            value: 3,
-            random: true,
-            animation: { enable: true, speed: 2, minimumValue: 0.1, sync: false }
-        },
-        line_linked: {
-            enable: true,
-            distance: 150,
-            color: '#ffffff',
-            opacity: 0.4,
-            width: 1
-        },
-        move: {
-            enable: true,
-            speed: 2,
-            direction: 'none',
-            random: false,
-            straight: false,
-            outMode: 'out',
-            bounce: false,
-        }
-    },
-    interactivity: {
-        detectsOn: 'canvas',
-        events: {
-            onHover: { enable: true, mode: 'repulse' },
-            onClick: { enable: true, mode: 'push' },
-            resize: true
-        },
-        modes: {
-            repulse: { distance: 100, duration: 0.4 },
-            push: { particles_nb: 4 }
-        }
-    },
-    retina_detect: true
-});
+const menuButton = document.querySelector('.menu-toggle');
+const siteNav = document.querySelector('.site-nav');
+const navLinks = Array.from(document.querySelectorAll('.site-nav a'));
+const sections = Array.from(document.querySelectorAll('main section[id]'));
+const revealElements = Array.from(document.querySelectorAll('.reveal'));
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+if (menuButton && siteNav) {
+  menuButton.addEventListener('click', () => {
+    const expanded = menuButton.getAttribute('aria-expanded') === 'true';
+    menuButton.setAttribute('aria-expanded', String(!expanded));
+    siteNav.classList.toggle('open');
+  });
+
+  navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      siteNav.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
     });
-});
+  });
+}
 
-// Scroll progress bar
-const scrollProgress = document.querySelector('.scroll-progress');
-window.addEventListener('scroll', () => {
-    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = (window.pageYOffset / totalHeight) * 100;
-    scrollProgress.style.width = progress + '%';
-});
+function showAllReveals() {
+  revealElements.forEach((element) => element.classList.add('show'));
+}
 
-// Update the Intersection Observer for better animation control
-const observerOptions = {
-    threshold: 0.2,
-    rootMargin: '0px'
-};
+function setupRevealAnimations() {
+  if (!revealElements.length) return;
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reducedMotion || !('IntersectionObserver' in window)) {
+    showAllReveals();
+    return;
+  }
+
+  revealElements.forEach((element, index) => {
+    element.style.setProperty('--reveal-delay', `${Math.min(index * 70, 420)}ms`);
+  });
+
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            // Add animation classes when element comes into view
-            if (entry.target.classList.contains('about-left')) {
-                entry.target.style.animation = 'fadeIn 0.8s ease-out forwards';
-            }
-            if (entry.target.classList.contains('about-right')) {
-                entry.target.style.animation = 'fadeIn 0.8s ease-out 0.3s forwards';
-            }
-            if (entry.target.classList.contains('skill-category')) {
-                const index = Array.from(entry.target.parentNode.children).indexOf(entry.target);
-                entry.target.style.animation = `fadeIn 0.5s ease-out ${index * 0.2}s forwards`;
-            }
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
         }
-    });
-}, observerOptions);
+      });
+    },
+    {
+      threshold: 0.1,
+      rootMargin: '0px 0px -8% 0px'
+    }
+  );
 
-// Observe elements for animation
-document.querySelectorAll('.about-left, .about-right, .skill-category').forEach(el => observer.observe(el));
+  revealElements.forEach((element) => revealObserver.observe(element));
+}
 
-// Initialize animations when page loads
-window.addEventListener('load', () => {
-    // Trigger initial animations
-    document.querySelector('.about-content').style.opacity = '1';
-    document.querySelector('.about-left').style.animation = 'fadeIn 0.8s ease-out forwards';
-    document.querySelector('.about-right').style.animation = 'fadeIn 0.8s ease-out 0.3s forwards';
-});
+setupRevealAnimations();
 
-// Hover effect for project cards
-document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        const xPercent = (x / rect.width - 0.5) * 20;
-        const yPercent = (y / rect.height - 0.5) * 20;
-        
-        card.style.transform = `perspective(1000px) rotateY(${xPercent}deg) rotateX(${-yPercent}deg) scale3d(1.05, 1.05, 1.05)`;
-    });
-    
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateY(0) rotateX(0) scale3d(1, 1, 1)';
-    });
-});
+function setActiveNav() {
+  const midpoint = window.scrollY + window.innerHeight * 0.35;
+
+  let current = sections[0]?.id || '';
+  for (const section of sections) {
+    if (midpoint >= section.offsetTop) {
+      current = section.id;
+    }
+  }
+
+  navLinks.forEach((link) => {
+    const isActive = link.getAttribute('href') === `#${current}`;
+    link.classList.toggle('active', isActive);
+  });
+}
+
+setActiveNav();
+window.addEventListener('scroll', setActiveNav, { passive: true });
+window.addEventListener('resize', setActiveNav);
+
+document.getElementById('year').textContent = new Date().getFullYear();
